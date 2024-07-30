@@ -10,9 +10,11 @@ const dispatch= useDispatch();
 
 const onSubmit= (data)=>{
  console.log(data);
- dispatch({type: 'REGISTER_USER', payload: data});
+ dispatch({type: 'REGISTER_USER', payload: data});  
+//  Elle dispatche une action 'REGISTER_USER' avec les données du formulaire comme payload
 };
 return(
+  //Dans le JSX, nous utilisons handleSubmit(onSubmit) pour gérer la soumission du formulaire.
   <form onSubmit={handleSubmit(onSubmit)}>
     <div>
       <label>Nom :</label>
@@ -26,6 +28,7 @@ return(
     </div>
     <div>
       <label>Âge</label>
+      {/* Nous utilisons l'opérateur spread (...) pour passer toutes les propriétés retournées par register à l'input. */}
       <input type='number' { ...register ('age', {required: true, validate: value  => value>18 || "Vous devez avoir plus de 18 ans"})}/>
       {errors.age && <span>{errors.age.message}</span>}
       </div>
