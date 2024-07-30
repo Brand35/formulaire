@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff; /* Couleur de fond douce */
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Styles pour le formulaire */
+form {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Dégradé pétillant */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+/* Effet de survol sur le formulaire */
+form:hover {
+  transform: scale(1.02); /* Légère augmentation de la taille */
+}
+
+/* Styles pour les champs de saisie */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Changement de style au focus */
+input:focus {
+  border: 2px solid #ff7e5f; /* Bordure pétillante */
+  box-shadow: 0 0 5px rgba(255, 126, 95, 0.5);
+  outline: none;
+}
+
+/* Styles pour les étiquettes */
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styles pour les messages d'erreur */
+span {
+  color: #ff4c4c; /* Couleur rouge pour les erreurs */
+  font-size: 0.9em;
+}
+
+/* Styles pour le bouton */
+button {
+  background-color: #ff7e5f; /* Couleur du bouton */
   color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+/* Effet de survol sur le bouton */
+button:hover {
+  background-color: #feb47b; /* Changement de couleur au survol */
+  transform: translateY(-2px); /* Légère élévation */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Animation pour le bouton */
+button:active {
+  transform: translateY(1px); /* Effet d'enfoncement */
 }
